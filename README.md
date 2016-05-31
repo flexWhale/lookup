@@ -25,7 +25,7 @@ Lookup is a visual element that helps you to select the definite meanings from a
 Star our GitHub repo
 
 <h2>Dependencies</h2>
-only jQuery
+jQuery
 
 <h2>License</h2>
 MIT license
