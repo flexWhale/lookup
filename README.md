@@ -20,7 +20,6 @@ Lookup is a visual element that helps you to select the definite meanings from a
 </ul>
 <li>Possibility to redefine all text messages in Lookup. That means it will be easy to localize the visual element in case it’s necessary. </li>
 </ul>
-<br/>
 
 <h2>How can I support developers?</h2>
 <ul>
