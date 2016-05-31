@@ -22,14 +22,10 @@ Lookup is a visual element that helps you to select the definite meanings from a
 </ul>
 
 <h2>How can I support developers?</h2>
-<ul>
-<li>Star our GitHub repo</li>
-</ul>
+Star our GitHub repo
 
 <h2>Dependencies</h2>
-<ul>
-<li>only jQuery</li>
-</ul>
+only jQuery
 
 <h2>License</h2>
 MIT license
