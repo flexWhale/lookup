@@ -26,7 +26,11 @@ Lookup is a visual element that helps you to select the definite meanings from a
 <li>Star our GitHub repo</li>
 </ul>
 
+<h2>Dependencies</h2>
+<ul>
+<li>only jQuery</li>
+</ul>
+
 <h2>License</h2>
 MIT license
 
-<strong>There is just one dependency on jQuery.</strong>
