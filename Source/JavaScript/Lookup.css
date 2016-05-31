@@ -1,0 +1,191 @@
+.flexWhale-lookup-rootLayout {
+    border: solid 1px #CBCFD9;
+    height: 34px;
+    position: relative;
+    width: 100%;
+    background-color: white;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.flexWhale-lookup-rootLayout:hover { border-color: #BCBCBC; }
+
+.flexWhale-imageLibary-downArrow {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAYAAAB4ka1VAAAAOklEQVQIW2PYsPf4/5krt/5nQAMgMZAcw8JN+/+DMLIiEBsmzvAfCJAVIUuCAFgHsiIMSRhAVoQsCQCP61sBGtck1QAAAABJRU5ErkJggg==') no-repeat;
+    height: 5px;
+    position: absolute;
+    right: 12px;
+    top: 15px;
+    width: 8px;
+}
+
+.flexWhale-imageLibary-check {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAJCAYAAADkZNYtAAAAZ0lEQVQY02NgIAKEhoZ6A7EWMQqjgPgPEL8ipDANiP9D8RmYIA8WhaXICoFYCCQoCsTngXgaEDNDFbYgKTwPVgiVWI0ksQKIJ6MpFEW2TgKIbyApgOFLKArxaLiKVSEWDSCFEtjUAABVFFM+F0bM4QAAAABJRU5ErkJggg==') no-repeat;
+}
+
+.flexWhale-checkBoxColumn {
+        display: table-cell;
+    width: 20px;
+    vertical-align: middle;
+    text-align: right;
+}
+
+.flexWhale-lookup-arrow {
+    bottom: 0;
+    height: 100%;
+    left: auto;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 34px;
+}
+.flexWhale-fieldLayoutLookup.flexWhale-customContentFieldLayoutLookup {
+    padding: 2px 5px;
+    padding-right: 34px;
+}
+
+.flexWhale-fieldLayoutLookup {
+    padding: 8px 34px 8px 9px;
+    width: 100%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: default;
+}
+
+.flexWhale-fieldLayoutLookup_noSelectedItems {
+    color: #CBCFD9;
+}
+
+
+.flexWhale-lookup-popup {
+    -moz-box-sizing: border-box;
+    -ms-box-shadow: 0 2px 3px #CBCFD9;
+    -webkit-box-shadow: 0 2px 3px #CBCFD9;
+    -webkit-box-sizing: border-box;
+    border: solid 1px #CBCFD9;
+    box-shadow: 0 1px 0px #CBCFD9;
+    box-sizing: border-box;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    background-color: white;
+}
+
+.flexWhale-lookupContent-searchTextBox {
+    -moz-box-sizing: border-box;
+    -ms-box-shadow: inset 0 1px 3px 0 #ccc;
+    -webkit-box-shadow: inset 0 1px 3px 0 #ccc;
+    -webkit-box-sizing: border-box;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAkElEQVQokWNggILe/skNQPwAiP9D8QcgngDEAgzYAFDiAJLiA2j8CxgaoTbAJBWQxAWgYmCD0DXBnGSAxQUCWOWxmoTdJQWkaErApukDVFAAh6YFUHkFZMEJuEIJyZYH2DwLC6UHUD8kINkAwwnYNB5AU/QfyenYNUI1G4A8DMUKaH7CrZFAYIBtJ0oTmsYFAK5424KPX1kjAAAAAElFTkSuQmCC');
+    background-position: 8px 8px;
+    background-repeat: no-repeat;
+    border: 1px solid #CBCFD9;
+    box-shadow: inset 0 1px 3px 0 #ccc;
+    box-sizing: border-box;
+    padding: 7px 6px 7px 28px;
+    width: 100%;
+}
+
+.flexWhale-lookupContent-searchTextBox::-ms-clear {
+ display: none;
+}
+
+.flexWhale-lookupContent-searchTextBox:focus {
+    border-color: #acacac;
+    outline: none;
+}
+
+.flexWhale-lookupContent-searchPanel {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 5px 5px 5px 5px;
+    width: 100%;
+}
+
+.flexWhale-lookupContent {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.flexWhale-listContainer {
+    height: calc(100% - 46px);
+    left: 0px;
+    overflow-y: auto;
+    position: absolute;
+    width: 100%;
+}
+
+.flexWhale-noDataLabel { padding-left: 5px; }
+
+.flexWhale-listLayout {
+    height: 100%;
+    width: 100%;
+}
+
+.flexWhale-listItem {
+    -moz-text-overflow: ellipsis;
+    cursor: pointer;
+    display: table;
+    overflow: hidden;
+    table-layout: fixed;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.flexWhale-listItem_selected {
+    background: #BCBCBC;
+}
+
+.flexWhale-listItem:hover { background: #EFEFEF; }
+
+.flexWhale-listItemContent {
+    -moz-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    display: table-cell;
+    overflow: hidden;
+    padding: 5px 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.flexWhale-listItemContent.flexWhale-listItemContent_multiSelection {
+     padding-left: 10px;
+}
+
+.flexWhale-listItemContent:before {
+    color: transparent;
+    content: "=";
+    display: inline-block;
+    float: left;
+    width: 0;
+}
+
+
+.flexWhale-headerGroup {
+    font-weight: bold;
+    padding: 7px 7px;
+    border-top: 1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3;
+    background:  #F7F7F7;
+
+    color: #232323;
+}

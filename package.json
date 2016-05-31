@@ -1,0 +1,12 @@
+{
+	"version": "1.0.0",
+	"name": "flexWhaleLookup",
+	"private": true,
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-cssmin": "latest",
+    "gulp-rename": "latest",
+    "gulp-uglify": "latest",
+    "gulp-tsc": "latest"
+  }
+}

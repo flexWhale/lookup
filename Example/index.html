@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Demo</title>
+	<meta charset="utf-8" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <link href="App/App.css" rel="stylesheet" />
+    <script src="App/App.js"></script>
+
+    <script src="App/AngularDemoApp.js"></script>
+    <script src="App/JQueryDemoApp.js"></script>
+
+    <script src="App/Data1.js"></script>
+    <script src="App/Data2.js"></script>
+
+    <script src="lookup.min.js"></script>
+    <link href="lookup.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container">
+        <h2>jQuery plugin</h2>
+            <div class="row">       
+            <div class="col-xs-12 col-sm-6 col-md-3 contentItem" id="cameraPanel1"></div>
+            <div class="col-xs-12 col-sm-6 col-md-3 contentItem" id="cameraPanel2"></div>
+            <div class="col-xs-12 col-sm-6 col-md-3 contentItem" id="cameraPanel3"></div>
+            <div class="col-xs-12 col-sm-6 col-md-3 contentItem" id="cameraPanel4"></div>
+        </div>
+
+        <div class="panel panel-default bootstrapPanel">
+            <div class="panel-heading">
+               Selected items
+             </div>
+            <div class="panel-body">
+                <span class="label label-primary bootstrapLabel">cameraPanel1</span>
+                <p class="bg-success">
+                    <span id="cameraPanel1SelectionItems">No selection items</span>
+                </p>
+                <span class="label label-primary bootstrapLabel">cameraPanel2</span>
+                <p class="bg-success">
+                    <span id="cameraPanel2SelectionItems">No selection items</span>
+                </p>
+                <span class="label label-primary bootstrapLabel">cameraPanel3</span>
+                <p class="bg-success">
+                    <span id="cameraPanel3SelectionItems">No selection items</span>
+                </p>
+                <span class="label label-primary bootstrapLabel">cameraPanel4</span>
+                <p class="bg-success">
+                    <span id="cameraPanel4SelectionItems">No selection items</span>
+                </p>
+
+            </div>
+        </div>
+
+
+        <h2>Angular Directive</h2>
+        <div class="row" ng-app="angularDemoApplication" ng-controller="demoCtrl">
+            <div class="col-xs-12 col-sm-6 col-md-3 contentItem" id="phonePanel1" flexwhale-lookup lookup-options="optionsPhones1" lookup-selected-items="selectedPhones" lookup-data-source="dataSource"></div>
+            <div class="col-xs-12 col-sm-6 col-md-3 contentItem" id="phonePanel2" flexwhale-lookup lookup-options="optionsPhones2"></div>
+            <div class="col-xs-12 col-sm-6 col-md-3 contentItem" id="phonePanel3" flexwhale-lookup lookup-options="optionsPhones3"></div>
+            <div class="col-xs-12 col-sm-6 col-md-3 contentItem" id="phonePanel4" flexwhale-lookup lookup-options="optionsPhones4"></div>
+        </div>
+        <div class="panel panel-default bootstrapPanel">
+            <div class="panel-heading">
+                Selected items
+            </div>
+            <div class="panel-body">
+                <span class="label label-primary bootstrapLabel">phonePanel1</span>
+                <p class="bg-success">
+                    <span id="phonePanel1SelectionItems">No selection items</span>
+                </p>
+                <span class="label label-primary bootstrapLabel">phonePanel2</span>
+                <p class="bg-success">
+                    <span id="phonePanel2SelectionItems">No selection items</span>
+                </p>
+                <span class="label label-primary bootstrapLabel">phonePanel3</span>
+                <p class="bg-success">
+                    <span id="phonePanel3SelectionItems">No selection items</span>
+                </p>
+                <span class="label label-primary bootstrapLabel">phonePanel4</span>
+                <p class="bg-success">
+                    <span id="phonePanel4SelectionItems">No selection items</span>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
