@@ -1,4 +1,7 @@
 
+<h2>Demo</h2>
+http://flexwhale.com/lookup/
+
 <h2>Description</h2>
 Lookup is a visual element that helps you to select the definite meanings from a lookup window. It’s possible to include Lookup in any web application with the help of developed jQuery-plugin or in Single Page Application created with the help of Angular 1.* version. (In case you have it. You may use a our angular-directive.) Project's configuration flexibility helps you to visualize any json-array.
 
