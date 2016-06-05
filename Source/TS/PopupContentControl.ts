@@ -7,6 +7,7 @@ module FlexWhale.Lookup {
         private _filterController: IFilterController = new ContainsFilterController();
         private _displayExpr: string;
         private _dataSource: Array<any>;
+        private _isVisibleSearchPanel: boolean;
 
         public get dataSource(): Array<any> {
             return this._dataSource;
@@ -19,14 +20,17 @@ module FlexWhale.Lookup {
 
         constructor(dataSource: Array<any>,
             displayExpr: string,
-            listControl: IListControl
+            listControl: IListControl,
+            isVisibleSearchPanel: boolean
         ) {
             this._dataSource = dataSource;
             this._listControl = listControl;
             this._displayExpr = displayExpr;
+            this._isVisibleSearchPanel = isVisibleSearchPanel;
         }
 
         setFocus(): void {
+            if (this._$searchBox)
             this._$searchBox.focus();
         }
 
@@ -38,25 +42,28 @@ module FlexWhale.Lookup {
             const $popupContent = $("<div/>");
             $popupContent.addClass("flexWhale-lookupContent");
 
-            const $searchPanel = $("<div/>");
-            $searchPanel.addClass("flexWhale-lookupContent-searchPanel");
-            $popupContent.append($searchPanel);
-
-            const $searchBox = this._$searchBox = $("<input/>");
-            $searchBox.attr("spellcheck", "false");
-            $searchBox.attr("autocomplete", "off");
-
             const listContainer = this.getListContainer();
 
-            $searchBox.keyup((e) => {
-                listContainer.empty();
 
-                var items = self._filterController.filter(self._dataSource, self._displayExpr, $searchBox.val());
-                listContainer.append(self._listControl.getView(items));
-            });
+            if (this._isVisibleSearchPanel) {
+                const $searchPanel = $("<div/>");
+                $searchPanel.addClass("flexWhale-lookupContent-searchPanel");
+                $popupContent.append($searchPanel);
 
-            $searchBox.addClass("flexWhale-lookupContent-searchTextBox");
-            $searchPanel.append($searchBox);
+                const $searchBox = this._$searchBox = $("<input/>");
+                $searchBox.attr("spellcheck", "false");
+                $searchBox.attr("autocomplete", "off");
+
+                $searchBox.keyup((e) => {
+                    listContainer.empty();
+
+                    var items = self._filterController.filter(self._dataSource, self._displayExpr, $searchBox.val());
+                    listContainer.append(self._listControl.getView(items));
+                });
+
+                $searchBox.addClass("flexWhale-lookupContent-searchTextBox");
+                $searchPanel.append($searchBox);
+            }
 
            
             listContainer.append(this._listControl.getView(this._dataSource));
@@ -68,6 +75,11 @@ module FlexWhale.Lookup {
         private getListContainer(): JQuery {
             const listContainer = $("<div/>");
             listContainer.addClass("flexWhale-listContainer");
+
+            if (this._isVisibleSearchPanel)
+                listContainer.addClass("flexWhale-listContainer_withSearchPanel");
+            else
+                listContainer.addClass("flexWhale-listContainer_withoutSearchPanel");
             return listContainer;
         }
 

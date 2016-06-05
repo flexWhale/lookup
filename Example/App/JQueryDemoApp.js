@@ -45,6 +45,7 @@ $(document)
                 multiSelection: false,
                 heightPopup: "300px",
                 widthPopup: "345px",
+                isVisibleSearchPanel:false,
                 headerGroupTemplate: function (e) {
                     return e.captionGroup + " (" + e.itemsGroup.length + " models)";
                 },

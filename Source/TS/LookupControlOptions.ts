@@ -34,6 +34,7 @@
         messages: Messages=new Messages();
         grouped = false;
         groupExpr: string;
+        isVisibleSearchPanel: boolean = true;
 
         widthPopup: string;
         heightPopup: string;

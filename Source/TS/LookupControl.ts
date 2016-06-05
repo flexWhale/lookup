@@ -67,7 +67,9 @@ module FlexWhale.Lookup {
 
             this._popupContent = new Lookup.PopupContentControl(this._dataSource,
                 options.displayExpr,
-                listControl);
+                listControl,
+                options.isVisibleSearchPanel
+            );
 
             this._popup = new Lookup.PopupControl<Lookup.PopupContentControl>(this._popupContent);
             this._popup.onClosedPopup.on(this.onClosedPopup.bind(this));

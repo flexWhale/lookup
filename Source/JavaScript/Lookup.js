@@ -189,11 +189,12 @@ var FlexWhale;
     var Lookup;
     (function (Lookup) {
         var PopupContentControl = (function () {
-            function PopupContentControl(dataSource, displayExpr, listControl) {
+            function PopupContentControl(dataSource, displayExpr, listControl, isVisibleSearchPanel) {
                 this._filterController = new Lookup.ContainsFilterController();
                 this._dataSource = dataSource;
                 this._listControl = listControl;
                 this._displayExpr = displayExpr;
+                this._isVisibleSearchPanel = isVisibleSearchPanel;
             }
             Object.defineProperty(PopupContentControl.prototype, "dataSource", {
                 get: function () {
@@ -206,26 +207,29 @@ var FlexWhale;
                 configurable: true
             });
             PopupContentControl.prototype.setFocus = function () {
-                this._$searchBox.focus();
+                if (this._$searchBox)
+                    this._$searchBox.focus();
             };
             PopupContentControl.prototype.getView = function () {
                 var self = this;
                 var $popupContent = $("<div/>");
                 $popupContent.addClass("flexWhale-lookupContent");
-                var $searchPanel = $("<div/>");
-                $searchPanel.addClass("flexWhale-lookupContent-searchPanel");
-                $popupContent.append($searchPanel);
-                var $searchBox = this._$searchBox = $("<input/>");
-                $searchBox.attr("spellcheck", "false");
-                $searchBox.attr("autocomplete", "off");
                 var listContainer = this.getListContainer();
-                $searchBox.keyup(function (e) {
-                    listContainer.empty();
-                    var items = self._filterController.filter(self._dataSource, self._displayExpr, $searchBox.val());
-                    listContainer.append(self._listControl.getView(items));
-                });
-                $searchBox.addClass("flexWhale-lookupContent-searchTextBox");
-                $searchPanel.append($searchBox);
+                if (this._isVisibleSearchPanel) {
+                    var $searchPanel = $("<div/>");
+                    $searchPanel.addClass("flexWhale-lookupContent-searchPanel");
+                    $popupContent.append($searchPanel);
+                    var $searchBox_1 = this._$searchBox = $("<input/>");
+                    $searchBox_1.attr("spellcheck", "false");
+                    $searchBox_1.attr("autocomplete", "off");
+                    $searchBox_1.keyup(function (e) {
+                        listContainer.empty();
+                        var items = self._filterController.filter(self._dataSource, self._displayExpr, $searchBox_1.val());
+                        listContainer.append(self._listControl.getView(items));
+                    });
+                    $searchBox_1.addClass("flexWhale-lookupContent-searchTextBox");
+                    $searchPanel.append($searchBox_1);
+                }
                 listContainer.append(this._listControl.getView(this._dataSource));
                 $popupContent.append(listContainer);
                 return $popupContent;
@@ -233,6 +237,10 @@ var FlexWhale;
             PopupContentControl.prototype.getListContainer = function () {
                 var listContainer = $("<div/>");
                 listContainer.addClass("flexWhale-listContainer");
+                if (this._isVisibleSearchPanel)
+                    listContainer.addClass("flexWhale-listContainer_withSearchPanel");
+                else
+                    listContainer.addClass("flexWhale-listContainer_withoutSearchPanel");
                 return listContainer;
             };
             return PopupContentControl;
@@ -266,7 +274,7 @@ var FlexWhale;
                         if (self._options.multiSelection === false)
                             self._popup.close();
                 });
-                this._popupContent = new Lookup.PopupContentControl(this._dataSource, options.displayExpr, listControl);
+                this._popupContent = new Lookup.PopupContentControl(this._dataSource, options.displayExpr, listControl, options.isVisibleSearchPanel);
                 this._popup = new Lookup.PopupControl(this._popupContent);
                 this._popup.onClosedPopup.on(this.onClosedPopup.bind(this));
                 this._popup.onOpenedPopup.on(this.onOpenedPopup.bind(this));
@@ -438,6 +446,7 @@ var FlexWhale;
                 this.multiSelection = false;
                 this.messages = new Messages();
                 this.grouped = false;
+                this.isVisibleSearchPanel = true;
             }
             return LookupControlOptions;
         }());
@@ -522,7 +531,8 @@ else
                         multiSelection: false,
                         dataSource: [],
                         displayExpr: "",
-                        groupExpr: ""
+                        groupExpr: "",
+                        isVisibleSearchPanel: true
                     };
                     var defaultMessages = {
                         noDataMessage: "No data to display",
@@ -624,7 +634,8 @@ var FlexWhale;
         multiSelection: false,
         dataSource: [],
         displayExpr: "",
-        groupExpr: ""
+        groupExpr: "",
+        isVisibleSearchPanel: true
     };
     $.fn.flexWhaleLookup = function (options) {
         return this.each(function () {

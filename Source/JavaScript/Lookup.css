@@ -122,11 +122,18 @@
 }
 
 .flexWhale-listContainer {
-    height: calc(100% - 46px);
     left: 0px;
     overflow-y: auto;
     position: absolute;
     width: 100%;
+}
+
+.flexWhale-listContainer_withSearchPanel{
+        height: calc(100% - 46px);
+}
+
+.flexWhale-listContainer_withoutSearchPanel{
+        height: inherit;
 }
 
 .flexWhale-noDataLabel { padding-left: 5px; }

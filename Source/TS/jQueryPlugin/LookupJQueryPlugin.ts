@@ -60,7 +60,8 @@
         multiSelection: false,
         dataSource: [],
         displayExpr: "",
-        groupExpr: ""
+        groupExpr: "",
+        isVisibleSearchPanel: true
     };
 
     $.fn.flexWhaleLookup = function(options) {

@@ -22,7 +22,8 @@ else
                         multiSelection: false,
                         dataSource: [],
                         displayExpr: "",
-                        groupExpr: ""
+                        groupExpr: "",
+                        isVisibleSearchPanel: true
                     };
 
                     var defaultMessages = {
