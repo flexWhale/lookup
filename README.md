@@ -21,9 +21,6 @@ Lookup is a visual element that helps you to select the definite meanings from a
 <li>Possibility to redefine all text messages in Lookup. That means it will be easy to localize the visual element in case it’s necessary. </li>
 </ul>
 
-<h2>How can I support developers?</h2>
-Star our GitHub repo
-
 <h2>Dependencies</h2>
 jQuery
 
